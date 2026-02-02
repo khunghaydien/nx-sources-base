@@ -10,7 +10,9 @@ export default defineConfig(() => ({
   cacheDir: '../../node_modules/.vite/packages/spg',
   resolve: {
     alias: {
-      '@ui': path.resolve(libsRoot, 'ui/index.ts'),
+      '@ui': path.resolve(libsRoot, 'ui'),
+      '@api': path.resolve(libsRoot, 'api'),
+      '@query': path.resolve(libsRoot, 'query'),
     },
   },
   server: {

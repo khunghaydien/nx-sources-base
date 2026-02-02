@@ -10,11 +10,6 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./ui": {
-      "types": "./dist/ui/index.d.ts",
-      "import": "./dist/ui/index.js",
-      "require": "./dist/ui/index.js"
-    },
     "./api": {
       "types": "./dist/api/index.d.ts",
       "import": "./dist/api/index.js",

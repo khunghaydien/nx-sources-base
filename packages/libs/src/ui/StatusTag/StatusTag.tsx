@@ -29,11 +29,9 @@ const StatusTag = <T extends string | number>({
   const { text, color, background } = statusConfig;
 
   return (
-    <span
-      className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg ${color} ${background} text-sm font-normal leading-5 h-7`}
-    >
+    <div className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg text-sm font-normal leading-5 h-7 ${color} ${background}`}>
       {text}
-    </span>
+    </div>
   );
 };
 

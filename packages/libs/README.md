@@ -2,7 +2,7 @@
 
 **UI** + **API (axios)** + **React Query** dùng chung cho tất cả dự án. Trong app dùng **alias ngắn** (đã cấu hình trong `tsconfig.base.json` + Vite):
 
-- **`@ui`** – components (Ant Design, ConfigProvider, Breadcrumbs, ErrorBoundary, NotFound, StatusTag, TiptapEditor)
+- **`@ui`** – components (Ant Design, ConfigProvider, Breadcrumbs, ErrorBoundary, StatusTag, TiptapEditor)
 - **`@api`** – axios (createApi)
 - **`@query`** – React Query (createQueryClient, queryClient, AppQueryProvider)
 

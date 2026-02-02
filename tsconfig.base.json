@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@ui": ["packages/libs/src/ui/index.ts"]
+      "@ui/*": ["packages/libs/src/ui/*"],
+      "@api/*": ["packages/libs/src/api/*"],
+      "@query/*": ["packages/libs/src/query/*"]
     },
     "composite": true,
     "declarationMap": true,
