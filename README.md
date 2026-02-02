@@ -1,8 +1,68 @@
-# New Nx Repository
+# nx-sources-base
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+Nx monorepo: **libs** (UI + api + query dùng chung), **spg** (app React).
+
+Trong app có thể import ngắn: **`@ui`** (thay cho @nx-sources-base/libs/ui), **`@api`** (libs/api), **`@query`** (libs/query). Alias đã cấu hình trong `tsconfig.base.json` và `packages/spg/vite.config.mts`.
+
+## Chạy local
+
+```bash
+# Cài dependency (lần đầu)
+npm install
+
+# Chạy app spg (dev server, hot reload)
+npm run dev
+# hoặc
+npm run serve
+```
+
+Mở trình duyệt: **http://localhost:4200** (port mặc định của spg).
+
+## Build & CI/CD
+
+### Build
+
+```bash
+# Build tất cả project (libs trước, sau đó spg)
+npm run build
+
+# Chỉ build libs
+npm run build:libs
+
+# Chỉ build spg (Nx tự build libs trước vì spg phụ thuộc libs)
+npm run build:spg
+```
+
+Hoặc dùng Nx trực tiếp:
+
+```bash
+npx nx build libs      # build @nx-sources-base/libs
+npx nx build spg       # build app spg (và libs nếu cần)
+npx nx run-many -t build   # build tất cả
+```
+
+### CI/CD (GitHub Actions)
+
+Workflow: **`.github/workflows/ci.yml`**
+
+- **Kích hoạt:** push / PR lên `main` hoặc `develop`
+- **Bước chạy:** `npm ci` → `npm run lint` → `npm run build`
+
+Để build từng project trong CI (job riêng), thêm step:
+
+```yaml
+- name: Build libs
+  run: npx nx build libs
+
+- name: Build spg
+  run: npx nx build spg
+```
+
+---
+
+✨ [Nx workspace](https://nx.dev) ready.
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 ## Finish your Nx platform setup

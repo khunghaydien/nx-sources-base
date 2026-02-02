@@ -1,9 +1,8 @@
 {
-  "name": "@org/spg",
+  "name": "@nx-sources-base/spg",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@org/api": "*",
-    "@org/ui": "*"
+    "@nx-sources-base/libs": "*"
   }
 }

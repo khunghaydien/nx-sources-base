@@ -2,8 +2,8 @@ import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import * as ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { AppConfigProvider } from '@org/ui';
-import { AppQueryProvider } from '@org/api';
+import { ConfigProvider } from '@ui';
+import { AppQueryProvider } from '@nx-sources-base/libs/query';
 import { store } from './store';
 import App from './app/app';
 import './styles.css';
@@ -16,11 +16,11 @@ root.render(
   <StrictMode>
     <Provider store={store}>
       <AppQueryProvider>
-        <AppConfigProvider>
+        <ConfigProvider>
           <BrowserRouter>
             <App />
           </BrowserRouter>
-        </AppConfigProvider>
+        </ConfigProvider>
       </AppQueryProvider>
     </Provider>
   </StrictMode>

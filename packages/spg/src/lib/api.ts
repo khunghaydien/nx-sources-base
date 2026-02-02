@@ -1,4 +1,4 @@
-import { createApi } from '@org/api';
+import { createApi } from '@nx-sources-base/libs/api';
 
 /** Axios instance cho app spg (baseURL từ env). */
 export const api = createApi({

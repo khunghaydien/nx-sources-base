@@ -7,10 +7,7 @@
       "path": "./packages/spg"
     },
     {
-      "path": "./packages/ui"
-    },
-    {
-      "path": "./packages/api"
+      "path": "./packages/libs"
     }
   ]
 }
